@@ -1,0 +1,127 @@
+.homepage {
+  padding: 40px 20px;
+  color: white;
+  background-color: rgb(25, 0, 0);
+}
+
+.homepage p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* --- Intro section --- */
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 250px;
+}
+
+.intro-img {
+  width: 200px;
+  border-radius: 25%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.intro-text h1 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.intro-text h2 {
+  font-size: 1.4rem;
+  margin: 5px 0 10px;
+}
+
+/* --- Section layout --- */
+.preview-section {
+  margin: 100px 0;
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid #444;
+  scroll-margin-top: 100px;
+}
+
+/* --- Skills & Projects previews --- */
+.skills-preview,
+.projects-preview {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.skill-box {
+  border: 1px solid #444;
+  padding: 15px 20px;
+  border-radius: 10px;
+  width: 180px;
+  background: #222;
+}
+
+.projects-preview img {
+  width: 180px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* --- Contact --- */
+.contact-cta {
+  padding: 40px 20px;
+  border-radius: 12px;
+  margin-bottom: 100px;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+  background-color: #555;
+}
+
+.btn:hover {
+  background-color: #333232;
+  color: plum;
+}
+
+[data-aos] {
+  transition-timing-function: ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-img {
+    width: 60%;
+    margin-bottom: 20px;
+  }
+
+  .intro-text h1 {
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .intro-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .skill-box,
+  .projects-preview img {
+    width: 100%;
+    max-width: 300px;
+  }
+}

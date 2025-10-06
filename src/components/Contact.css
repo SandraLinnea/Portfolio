@@ -1,0 +1,27 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 40px;
+  font-size: 1,5rem;
+}
+
+.contact-icon {
+  font-size: 60px;
+  color: white;
+  transition: color 0.3s ease;
+  margin: 20px;
+}
+
+.contact-icon:hover {
+  color: plum;
+}
+
+.icon-link {
+  text-decoration: none;
+}

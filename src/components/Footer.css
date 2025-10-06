@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.footer-icon {
+  font-size: 28px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: plum;
+}
+
+.icon-link {
+  text-decoration: none;
+}

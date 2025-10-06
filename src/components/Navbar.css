@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  gap: 10px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.nav-button {
+  text-decoration: none;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.nav-button:hover {
+  background-color: #333232;
+  color: plum;
+  transform: translateY(-3px);
+}
