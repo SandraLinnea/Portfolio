@@ -5,29 +5,33 @@ import './Projects.css';
 
 const projects = [
   {
-    image: "/images/Tasko.png",
-    github: "https://github.com/SandraLinnea/Habit-Assistant-Application",
+    name: 'Tasko',
+    image: '/images/Tasko.png',
+    github: 'https://github.com/SandraLinnea/Habit-Assistant-Application',
     demo: null,
-    skills: ["React", "CSS"],
+    skills: ['React', 'CSS'],
   },
   {
-    image: "/images/Pokemon.png",
-    github: "https://github.com/SandraLinnea/Pokemon",
+    name: 'Pokemon',
+    image: '/images/Pokemon.png',
+    github: 'https://github.com/SandraLinnea/Pokemon',
     demo: null,
-    skills: ["React", "JavaScript", "Pokémon API"],
+    skills: ['React', 'JavaScript', 'Pokemon API'],
   },
   {
-    image: "/images/CobraQuiz.png",
-    github: "https://github.com/SandraLinnea/Quiz",
+    name: 'Cobra Quiz',
+    image: '/images/CobraQuiz.png',
+    github: 'https://github.com/SandraLinnea/Quiz',
     demo: null,
-    skills: ["JavaScript", "HTML", "CSS"],
+    skills: ['JavaScript', 'HTML', 'CSS'],
   },
   {
-    image: "/images/HakimLivs.png",
-    github: "https://github.com/SandraLinnea/fullstack-booking-backend",
-    demo: "https://2405-g03-fe-v2.vercel.app/index.html",
-    description: "Gjort backenddelen för detta projekt.",
-    skills: ["Node.js", "Express", "MongoDB"],
+    name: 'Hakim Livs',
+    image: '/images/HakimLivs.png',
+    github: 'https://github.com/SandraLinnea/fullstack-booking-backend',
+    demo: 'https://2405-g03-fe-v2.vercel.app/index.html',
+    description: 'Built the backend for this project.',
+    skills: ['Node.js', 'Express', 'MongoDB'],
   },
 ];
 
@@ -41,20 +45,21 @@ const Projects = () => {
 
   return (
     <div className="projects-grid">
-      {projects.map((project, index) => (
-        <div className="project-card" key={index} data-aos="zoom-in">
+      {projects.map((project) => (
+        <div className="project-card" key={project.name} data-aos="zoom-in">
           <img src={project.image} alt={project.name} className="project-img" />
           <h3>{project.name}</h3>
+          {project.description && <p className="project-description">{project.description}</p>}
           <div className="project-buttons">
             <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn">GitHub</a>
             {project.demo && (
               <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn">Demo</a>
             )}
             <div className="tooltip-wrapper">
-              <button className="btn">Skills</button>
+              <button type="button" className="btn">Skills</button>
               <div className="tooltip">
-                {project.skills.map((skill, i) => (
-                  <div key={i} className="tooltip-skill">{skill}</div>
+                {project.skills.map((skill) => (
+                  <div key={skill} className="tooltip-skill">{skill}</div>
                 ))}
               </div>
             </div>

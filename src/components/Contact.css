@@ -1,27 +1,77 @@
-.contact {
+.contact-container {
+  padding: 48px 20px 64px;
+  color: white;
+  text-align: center;
+}
+
+.contact-list {
+  display: grid;
+  gap: 18px;
+  max-width: 720px;
+  margin: 32px auto;
+}
+
+.contact-item {
   display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  text-align: left;
+}
+
+.contact-icon-link {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  border-top: 1px solid #ddd;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin-top: 40px;
-  font-size: 1,5rem;
+  min-width: 68px;
+  min-height: 68px;
+  border-radius: 50%;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.06);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-icon-link:hover,
+.contact-icon-link:focus-visible {
+  transform: translateY(-3px);
+  background-color: rgba(221, 160, 221, 0.15);
 }
 
 .contact-icon {
-  font-size: 60px;
+  font-size: 34px;
   color: white;
-  transition: color 0.3s ease;
-  margin: 20px;
+  transition: color 0.2s ease;
 }
 
-.contact-icon:hover {
+.contact-icon-link:hover .contact-icon,
+.contact-icon-link:focus-visible .contact-icon {
   color: plum;
 }
 
-.icon-link {
-  text-decoration: none;
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #d7b7d7;
+}
+
+.contact-value {
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
 }

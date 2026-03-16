@@ -7,6 +7,7 @@
 
 .project-card {
   color: white;
+  background-color: #1f1f1f;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -23,15 +24,24 @@
   object-fit: cover;
 }
 
+.project-card h3 {
+  margin: 1rem 1rem 0;
+}
+
+.project-description {
+  margin: 1rem 1rem 0;
+  color: #d5d5d5;
+}
+
 .project-buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 1rem;
+  margin: 1rem;
   flex-wrap: wrap;
 }
 
-.btn {
+.project-card .btn {
   color: white;
   padding: 6px 12px;
   border: none;
@@ -39,10 +49,12 @@
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
-  background-color: none;
+  background-color: #555;
 }
 
-.btn:hover {
+.project-card .btn:hover {
+  background-color: #333232;
+  color: plum;
   transform: translateY(-4px);
 }
 
@@ -76,4 +88,10 @@
 
 .tooltip-skill {
   margin: 2px 0;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }

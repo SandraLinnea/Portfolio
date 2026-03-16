@@ -33,9 +33,10 @@ function TechnicalSkills() {
             <li>JavaScript</li>
             <li>TypeScript</li>
             <li>C#</li>
+            <li>.NET</li>
             <li>NodeJS</li>
             <li>Express</li>
-            <li>Microtjänster i .NET</li>
+            <li>.NET Microservices</li>
             <li>ASP.NET Core Web API</li>
           </ul>
         </div>
@@ -45,6 +46,7 @@ function TechnicalSkills() {
             <li>MongoDB</li>
             <li>PostgreSQL</li>
             <li>MySQL</li>
+            <li>SQL Server Management Studio</li>
           </ul>
         </div>
         <div>
@@ -52,8 +54,9 @@ function TechnicalSkills() {
           <ul>
             <li>Visual Studio Code</li>
             <li>Visual Studio</li>
-            <li>Github</li>
+            <li>GitHub</li>
             <li>Git</li>
+            <li>Azure DevOps</li>
             <li>Jira</li>
             <li>Confluence</li>
             <li>Trello</li>
