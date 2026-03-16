@@ -7,6 +7,9 @@
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(4px);
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(25, 0, 0, 0.9);
 }
 
 .nav-button {
@@ -18,8 +21,26 @@
   position: relative;
 }
 
-.nav-button:hover {
+.nav-button:hover,
+.nav-button:focus-visible {
   background-color: #333232;
   color: plum;
   transform: translateY(-3px);
+}
+
+.nav-button-active {
+  background-color: #333232;
+  color: plum;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .nav-button {
+    flex: 1 1 140px;
+    text-align: center;
+  }
 }

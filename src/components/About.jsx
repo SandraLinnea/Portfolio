@@ -22,11 +22,11 @@ function About() {
       <div className="about-text" data-aos="fade-right">
         <h2>Who am I?</h2>
         <p>
-          I am currently studying Web Developer Fullstack Open Source at Nackademin, and I will graduate in May 2026.
-          During my studies, I have worked with technologies such as HTML, CSS, JavaScript, React, SQL, PostgreSQL, MySQL, 
-          MongoDB, C#, TypeScript and Node.js. These experiences have provided me with a 
-          strong understanding of both frontend and backend development, as well as the ability to build dynamic and 
-          responsive web applications.
+          I am currently studying Web Developer Fullstack Open Source at Nackademin and will graduate in May 2026.
+          During my studies, I have built skills in both frontend and backend development, working with technologies such as
+          HTML, CSS, JavaScript, React, TypeScript, C#, Node.js, PostgreSQL, MySQL, and MongoDB. I enjoy creating responsive,
+          user-friendly web applications and combining technical problem-solving with clean, practical design. My goal is to
+          continue growing as a developer through real projects, collaboration, and new challenges.
         </p>
       </div>
     </div>

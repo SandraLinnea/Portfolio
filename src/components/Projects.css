@@ -58,6 +58,12 @@
   transform: translateY(-4px);
 }
 
+.project-card .btn:focus-visible {
+  background-color: #333232;
+  color: plum;
+  transform: translateY(-4px);
+}
+
 .tooltip-wrapper {
   position: relative;
   display: inline-block;
@@ -81,7 +87,8 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.tooltip-wrapper:hover .tooltip {
+.tooltip-wrapper:hover .tooltip,
+.tooltip-wrapper:focus-within .tooltip {
   visibility: visible;
   opacity: 1;
 }

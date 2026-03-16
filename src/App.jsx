@@ -28,15 +28,18 @@ function AppLayout() {
 
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/technicalskills" element={<TechnicalSkills />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/cv" element={<CV />} />
-      </Routes>
+      <main id="main-content" tabIndex="-1">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/technicalskills" element={<TechnicalSkills />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cv" element={<CV />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   );

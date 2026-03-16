@@ -20,7 +20,7 @@ function HomePage() {
           <h2>Hello! I am</h2>
           <h1>Sandra Bjorklund</h1>
           <h2>Fullstack Developer</h2>
-          <p>Student at Nackademin with a passion for frontend and backend.</p>
+          <p>I am a fullstack developer student at Nackademin with a strong interest in building modern web applications, from polished user interfaces to reliable backend solutions.</p>
           <Link to="/about" className="btn">More About Me</Link>
         </div>
       </section>

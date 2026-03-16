@@ -25,3 +25,13 @@
   color: plum;
 }
 
+.btn:focus-visible {
+  background-color: #333232;
+  color: plum;
+}
+
+@media (max-width: 768px) {
+  .cv-container {
+    padding: 40px 16px;
+  }
+}
