@@ -7,13 +7,17 @@ import './HomePage.css';
 const featuredProjects = [
   {
     name: 'RainLens Weather App',
+    image: '/RainLens.png',
     github: 'https://github.com/SandraLinnea/RainLens.WeatherApp.git',
     demo: 'https://rain-lens-weather-app.vercel.app/',
+    skills: ['C#', 'Blazor', '.NET'],
   },
   {
     name: 'TuraPro',
+    image: '/TuraPro.png',
     github: 'https://github.com/SandraLinnea/TuraPro.git',
     demo: 'https://tura-pro.vercel.app/',
+    skills: ['C#', 'Blazor', '.NET'],
   },
 ];
 
@@ -57,12 +61,20 @@ function HomePage() {
         <div className="projects-preview">
           {featuredProjects.map((project) => (
             <article className="featured-project-card" key={project.name}>
-              <div className="featured-project-visual">{project.name}</div>
+              <img src={project.image} alt={project.name} className="featured-project-visual" />
               <div className="featured-project-content">
                 <h3>{project.name}</h3>
                 <div className="featured-project-links">
                   <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn">GitHub</a>
                   <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn">Demo</a>
+                  <div className="tooltip-wrapper">
+                    <button type="button" className="btn">Skills</button>
+                    <div className="tooltip">
+                      {project.skills.map((skill) => (
+                        <div key={skill} className="tooltip-skill">{skill}</div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </article>

@@ -6,14 +6,14 @@ import './Projects.css';
 const projects = [
   {
     name: 'RainLens Weather App',
-    image: null,
+    image: '/RainLens.png',
     github: 'https://github.com/SandraLinnea/RainLens.WeatherApp.git',
     demo: 'https://rain-lens-weather-app.vercel.app/',
     skills: ['C#', 'Blazor', '.NET'],
   },
   {
     name: 'TuraPro',
-    image: null,
+    image: '/TuraPro.png',
     github: 'https://github.com/SandraLinnea/TuraPro.git',
     demo: 'https://tura-pro.vercel.app/',
     skills: ['C#', 'Blazor', '.NET'],
