@@ -15,7 +15,7 @@ const projects = [
     name: 'TuraPro',
     image: null,
     github: 'https://github.com/SandraLinnea/TuraPro.git',
-    demo: 'https://vercel.com/sandralinneas-projects/tura-pro',
+    demo: 'https://tura-pro.vercel.app/',
     skills: ['C#', 'Blazor', '.NET'],
   },
   {
