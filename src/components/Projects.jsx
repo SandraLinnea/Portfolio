@@ -5,6 +5,20 @@ import './Projects.css';
 
 const projects = [
   {
+    name: 'RainLens Weather App',
+    image: null,
+    github: 'https://github.com/SandraLinnea/RainLens.WeatherApp.git',
+    demo: 'https://rain-lens-weather-app.vercel.app/',
+    skills: ['C#', 'Blazor', '.NET'],
+  },
+  {
+    name: 'TuraPro',
+    image: null,
+    github: 'https://github.com/SandraLinnea/TuraPro.git',
+    demo: 'https://vercel.com/sandralinneas-projects/tura-pro',
+    skills: ['C#', 'Blazor', '.NET'],
+  },
+  {
     name: 'Tasko',
     image: '/images/Tasko.png',
     github: 'https://github.com/SandraLinnea/Habit-Assistant-Application',
@@ -47,7 +61,13 @@ const Projects = () => {
     <div className="projects-grid">
       {projects.map((project) => (
         <div className="project-card" key={project.name} data-aos="zoom-in">
-          <img src={project.image} alt={project.name} className="project-img" />
+          {project.image ? (
+            <img src={project.image} alt={project.name} className="project-img" />
+          ) : (
+            <div className="project-img project-img-placeholder" aria-hidden="true">
+              <span>{project.name}</span>
+            </div>
+          )}
           <h3>{project.name}</h3>
           {project.description && <p className="project-description">{project.description}</p>}
           <div className="project-buttons">

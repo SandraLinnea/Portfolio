@@ -4,6 +4,19 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './HomePage.css';
 
+const featuredProjects = [
+  {
+    name: 'RainLens Weather App',
+    github: 'https://github.com/SandraLinnea/RainLens.WeatherApp.git',
+    demo: 'https://rain-lens-weather-app.vercel.app/',
+  },
+  {
+    name: 'TuraPro',
+    github: 'https://github.com/SandraLinnea/TuraPro.git',
+    demo: 'https://vercel.com/sandralinneas-projects/tura-pro',
+  },
+];
+
 function HomePage() {
   useEffect(() => {
     AOS.init({
@@ -18,7 +31,10 @@ function HomePage() {
         <img src="/images/Me.jpg" alt="Portrait of Sandra Bjorklund" className="intro-img" />
         <div className="intro-text">
           <h2>Hello! I am</h2>
-          <h1>Sandra Bjorklund</h1>
+          <div className="intro-name">
+            <h1>Sandra Bjorklund</h1>
+            <img src="/SBLogoWhite.png" alt="SB logo" className="intro-logo" />
+          </div>
           <h2>Fullstack Developer</h2>
           <p>I am a fullstack developer student at Nackademin with a strong interest in building modern web applications, from polished user interfaces to reliable backend solutions.</p>
           <Link to="/about" className="btn">More About Me</Link>
@@ -39,8 +55,18 @@ function HomePage() {
       <section className="preview-section" data-aos="fade-left">
         <h2>Featured Projects</h2>
         <div className="projects-preview">
-          <img src="/images/CobraQuiz.png" alt="Cobra Quiz project" />
-          <img src="/images/Tasko.png" alt="Tasko project" />
+          {featuredProjects.map((project) => (
+            <article className="featured-project-card" key={project.name}>
+              <div className="featured-project-visual">{project.name}</div>
+              <div className="featured-project-content">
+                <h3>{project.name}</h3>
+                <div className="featured-project-links">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn">GitHub</a>
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn">Demo</a>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
         <Link to="/projects" className="btn">Explore More Projects</Link>
       </section>
