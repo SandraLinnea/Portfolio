@@ -3,23 +3,23 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './CV.css';
 
-function CV() {
+function CV({ copy }) {
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
 
   return (
     <div className="cv-container" data-aos="fade-up">
-      <h2>Here you can find my CV</h2>
-      <p>Don't hesitate to contact me if you'd like to know more!</p>
+      <h2>{copy.heading}</h2>
+      <p>{copy.text}</p>
 
       <div className="cv-buttons">
         <a href="/Sandra-Bjorklund-CV.pdf"download className="btn">
-          Download CV
+          {copy.download}
         </a>
 
         <a href="/Sandra-Bjorklund-CV.pdf"target="_blank"rel="noopener noreferrer"className="btn btn-outline">
-          View CV in Browser
+          {copy.view}
         </a>
       </div>
     </div>

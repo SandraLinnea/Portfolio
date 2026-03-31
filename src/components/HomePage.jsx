@@ -21,7 +21,7 @@ const featuredProjects = [
   },
 ];
 
-function HomePage() {
+function HomePage({ copy }) {
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -32,32 +32,31 @@ function HomePage() {
   return (
     <div className="homepage">
       <section className="intro" data-aos="fade-right">
-        <img src="/images/Me.jpg" alt="Portrait of Sandra Bjorklund" className="intro-img" />
+        <img src="/images/Me.jpg" alt={copy.portraitAlt} className="intro-img" />
         <div className="intro-text">
-          <h2>Hello! I am</h2>
+          <h2>{copy.greeting}</h2>
           <div className="intro-name">
             <h1>Sandra Bjorklund</h1>
-            <img src="/SBLogoWhite.png" alt="SB logo" className="intro-logo" />
+            <img src="/SBLogoWhiteTransparent.png" alt={copy.logoAlt} className="intro-logo" />
           </div>
-          <h2>Fullstack Developer</h2>
-          <p>I am a fullstack developer student at Nackademin with a strong interest in building modern web applications, from polished user interfaces to reliable backend solutions.</p>
-          <Link to="/about" className="btn">More About Me</Link>
+          <h2>{copy.title}</h2>
+          <p>{copy.intro}</p>
+          <Link to="/about" className="btn">{copy.aboutButton}</Link>
         </div>
       </section>
 
       <section className="preview-section" data-aos="zoom-in">
-        <h2>Technical Skills</h2>
+        <h2>{copy.skillsHeading}</h2>
         <div className="skills-preview">
-          <div className="skill-box"><strong>Frontend</strong></div>
-          <div className="skill-box"><strong>Backend</strong></div>
-          <div className="skill-box"><strong>Database</strong></div>
-          <div className="skill-box"><strong>Others</strong></div>
+          {copy.skillsPreview.map((skill) => (
+            <div className="skill-box" key={skill}><strong>{skill}</strong></div>
+          ))}
         </div>
-        <Link to="/technicalskills" className="btn">See All Skills</Link>
+        <Link to="/technicalskills" className="btn">{copy.skillsButton}</Link>
       </section>
 
       <section className="preview-section" data-aos="fade-left">
-        <h2>Featured Projects</h2>
+        <h2>{copy.featuredHeading}</h2>
         <div className="projects-preview">
           {featuredProjects.map((project) => (
             <article className="featured-project-card" key={project.name}>
@@ -65,10 +64,10 @@ function HomePage() {
               <div className="featured-project-content">
                 <h3>{project.name}</h3>
                 <div className="featured-project-links">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn">GitHub</a>
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn">Demo</a>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn">{copy.projectButtons.github}</a>
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn">{copy.projectButtons.demo}</a>
                   <div className="tooltip-wrapper">
-                    <button type="button" className="btn">Skills</button>
+                    <button type="button" className="btn">{copy.projectButtons.skills}</button>
                     <div className="tooltip">
                       {project.skills.map((skill) => (
                         <div key={skill} className="tooltip-skill">{skill}</div>
@@ -80,13 +79,13 @@ function HomePage() {
             </article>
           ))}
         </div>
-        <Link to="/projects" className="btn">Explore More Projects</Link>
+        <Link to="/projects" className="btn">{copy.projectsButton}</Link>
       </section>
 
       <section className="preview-section contact-cta" data-aos="fade-up">
-        <h2>Get In Touch</h2>
-        <p>Let&apos;s connect, whether it&apos;s for internships, freelance work, or collaboration.</p>
-        <Link to="/contact" className="btn">Contact Me</Link>
+        <h2>{copy.contactHeading}</h2>
+        <p>{copy.contactText}</p>
+        <Link to="/contact" className="btn">{copy.contactButton}</Link>
       </section>
     </div>
   );

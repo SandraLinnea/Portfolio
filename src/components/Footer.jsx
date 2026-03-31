@@ -6,34 +6,34 @@ const footerLinks = [
   {
     href: 'https://github.com/SandraLinnea',
     value: 'github.com/SandraLinnea',
-    ariaLabel: 'GitHub profile',
+    ariaKey: 'github',
     Icon: FaGithub,
   },
   {
     href: 'https://www.linkedin.com/in/sandra-bj%C3%B6rklund-0426b917b/',
     value: 'linkedin.com/in/sandra-bjorklund-0426b917b',
-    ariaLabel: 'LinkedIn profile',
+    ariaKey: 'linkedin',
     Icon: FaLinkedin,
   },
   {
     href: 'mailto:sandra.b93@hotmail.com',
     value: 'sandra.b93@hotmail.com',
-    ariaLabel: 'Send email',
+    ariaKey: 'email',
     Icon: FaEnvelope,
   },
 ];
 
-function Footer() {
+function Footer({ copy }) {
   return (
     <footer className="footer">
-      {footerLinks.map(({ href, value, ariaLabel, Icon }) => (
+      {footerLinks.map(({ href, value, ariaKey, Icon }) => (
         <a
           key={value}
           href={href}
           target={href.startsWith('http') ? '_blank' : undefined}
           rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
           className="footer-link"
-          aria-label={ariaLabel}
+          aria-label={copy.aria[ariaKey]}
         >
           <span className="footer-tooltip" aria-hidden="true">{value}</span>
           <Icon className="footer-icon" />

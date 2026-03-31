@@ -3,7 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './TechnicalSkills.css';
 
-function TechnicalSkills() {
+function TechnicalSkills({ copy }) {
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -13,10 +13,10 @@ function TechnicalSkills() {
 
   return (
     <div className="skills-container" data-aos="zoom-out">
-      <h2>TECHNICAL SKILLS</h2>
+      <h2>{copy.heading}</h2>
       <div className="skills-row">
         <div>
-          <h3>Frontend</h3>
+          <h3>{copy.categories.frontend}</h3>
           <ul>
             <li>JavaScript</li>
             <li>React Vite</li>
@@ -28,7 +28,7 @@ function TechnicalSkills() {
           </ul>
         </div>
         <div>
-          <h3>Backend</h3>
+          <h3>{copy.categories.backend}</h3>
           <ul>
             <li>JavaScript</li>
             <li>TypeScript</li>
@@ -41,7 +41,7 @@ function TechnicalSkills() {
           </ul>
         </div>
         <div>
-          <h3>Databas</h3>
+          <h3>{copy.categories.database}</h3>
           <ul>
             <li>MongoDB</li>
             <li>PostgreSQL</li>
@@ -50,13 +50,14 @@ function TechnicalSkills() {
           </ul>
         </div>
         <div>
-          <h3>Tools</h3>
+          <h3>{copy.categories.tools}</h3>
           <ul>
             <li>Visual Studio Code</li>
             <li>Visual Studio</li>
             <li>GitHub</li>
             <li>Git</li>
             <li>Azure DevOps</li>
+            <li>SonarQube</li>
             <li>Jira</li>
             <li>Confluence</li>
             <li>Trello</li>

@@ -4,31 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './Contact.css';
 
-const contactMethods = [
-  {
-    href: 'https://www.linkedin.com/in/sandra-bj%C3%B6rklund-0426b917b/',
-    label: 'LinkedIn',
-    value: 'linkedin.com/in/sandra-bjorklund-0426b917b',
-    ariaLabel: 'LinkedIn profile',
-    Icon: FaLinkedin,
-  },
-  {
-    href: 'mailto:sandra.b93@hotmail.com',
-    label: 'Email',
-    value: 'sandra.b93@hotmail.com',
-    ariaLabel: 'Send email',
-    Icon: FaEnvelope,
-  },
-  {
-    href: 'tel:+46701234567',
-    label: 'Phone',
-    value: '+46 70 123 45 67',
-    ariaLabel: 'Call by phone',
-    Icon: FaPhone,
-  },
-];
-
-function Contact() {
+function Contact({ copy }) {
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -36,10 +12,34 @@ function Contact() {
     });
   }, []);
 
+  const contactMethods = [
+    {
+      href: 'https://www.linkedin.com/in/sandra-bj%C3%B6rklund-0426b917b/',
+      label: copy.labels.linkedin,
+      value: 'linkedin.com/in/sandra-bjorklund-0426b917b',
+      ariaLabel: copy.aria.linkedin,
+      Icon: FaLinkedin,
+    },
+    {
+      href: 'mailto:sandra.b93@hotmail.com',
+      label: copy.labels.email,
+      value: 'sandra.b93@hotmail.com',
+      ariaLabel: copy.aria.email,
+      Icon: FaEnvelope,
+    },
+    {
+      href: 'tel:+46701234567',
+      label: copy.labels.phone,
+      value: '+46 70 123 45 67',
+      ariaLabel: copy.aria.phone,
+      Icon: FaPhone,
+    },
+  ];
+
   return (
     <div className="contact-container" data-aos="fade-up">
-      <h2>Contact me</h2>
-      <p>You can contact me in different ways using email, LinkedIn or phone.</p>
+      <h2>{copy.heading}</h2>
+      <p>{copy.intro}</p>
 
       <div className="contact-list">
         {contactMethods.map(({ href, label, value, ariaLabel, Icon }) => (
@@ -61,7 +61,7 @@ function Contact() {
         ))}
       </div>
 
-      <p>Let&apos;s connect, whether it&apos;s for internships, freelance work, or collaboration.</p>
+      <p>{copy.outro}</p>
     </div>
   );
 }

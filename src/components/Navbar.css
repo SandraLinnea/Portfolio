@@ -1,15 +1,26 @@
-.navbar {
-  display: flex;
-  gap: 10px;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
+.navbar-shell {
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid #ddd;
   backdrop-filter: blur(4px);
+  background-color: rgb(10, 0, 8);
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  min-height: 64px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgb(10, 0, 8);
 }
 
 .nav-button {
@@ -21,11 +32,36 @@
   position: relative;
 }
 
+.language-toggle {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px 16px;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
 .nav-button:hover,
-.nav-button:focus-visible {
+.nav-button:focus-visible,
+.language-toggle:hover,
+.language-toggle:focus-visible {
   background-color: #333232;
   color: plum;
+}
+
+.nav-button:hover,
+.nav-button:focus-visible {
   transform: translateY(-3px);
+}
+
+.language-toggle:hover,
+.language-toggle:focus-visible {
+  transform: translateY(calc(-50% - 3px));
 }
 
 .nav-button-active {
@@ -35,12 +71,30 @@
 
 @media (max-width: 768px) {
   .navbar {
-    gap: 8px;
     padding: 10px 12px;
+    min-height: unset;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 8px;
   }
 
   .nav-button {
     flex: 1 1 140px;
     text-align: center;
+  }
+
+  .language-toggle {
+    position: static;
+    transform: none;
+    flex: 1 1 80px;
+  }
+
+  .language-toggle:hover,
+  .language-toggle:focus-visible {
+    transform: translateY(-3px);
   }
 }
